@@ -1,5 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Categories from './components/Categories';
+import Home from './components/Home';
 
 function App() {
   return (
