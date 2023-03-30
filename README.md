@@ -55,7 +55,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [A live demo link will be added as soon as the app is completed and hosted](https://yourdeployedapplicationlink.com)
+- A live demo link will be added as soon as the app is completed and hosted
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -151,7 +151,7 @@ Example command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/kkolade/the-math-magician/issues).
+Feel free to check the [issues page](https://github.com/kkolade/the-bookstore/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
