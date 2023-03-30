@@ -4,6 +4,7 @@ const Categories = () => {
   return (
     <div>
       <h2>Categories</h2>
+      <button type="submit">Status</button>
     </div>
   );
 };
