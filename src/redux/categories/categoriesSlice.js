@@ -8,11 +8,11 @@ export const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
-    addBook: (state, action) => {
+    checkStatus: (state) => {
       state.categories = [...(state.categories.status = 'Under Construction')];
     },
   },
 });
 
-export const { addBook, deleteBook } = categoriesSlice.actions;
+export const { checkStatus } = categoriesSlice.actions;
 export default categoriesSlice.reducer;
