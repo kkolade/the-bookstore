@@ -3,19 +3,21 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteBook } from '../redux/books/booksSlice';
 
-const Book = ({ id, title, author }) => {
+const Book = ({
+  key, id, title, author,
+}) => {
   const dispatch = useDispatch();
 
-  const handleRemove = () => {
+  const handleClick = () => {
     dispatch(deleteBook(id));
   };
 
   return (
-    <li>
+    <li key={key}>
       {title}
       {' by '}
       {author}
-      <button type="submit" onClick={handleRemove}>
+      <button type="submit" onClick={handleClick}>
         Remove
       </button>
     </li>
@@ -23,6 +25,7 @@ const Book = ({ id, title, author }) => {
 };
 
 Book.propTypes = {
+  key: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
