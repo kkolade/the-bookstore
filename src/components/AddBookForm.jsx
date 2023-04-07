@@ -1,63 +1,50 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/booksSlice';
 
 const AddBookForm = () => {
   const dispatch = useDispatch();
-  const [formInputs, setFormInputs] = useState({ title: '', author: '' });
+  const [author, setAuthor] = useState('');
+  const [title, setTitle] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const id = uuidv4();
-    const newBook = {
-      item_id: id,
-      ...formInputs,
+    const book = {
+      item_id: uuidv4(),
+      title,
+      author,
+      category: 'action',
     };
-
-    dispatch(addBook(newBook));
-    setFormInputs({
-      title: '',
-      author: '',
-    });
-  };
-
-  const handleChange = (e) => {
-    setFormInputs((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
+    dispatch(addBook(book));
+    setTitle('');
+    setAuthor('');
+    console.log(book);
   };
 
   return (
     <div>
-      <h3>Add New Book</h3>
+      <h3>Add new book</h3>
       <form onSubmit={handleSubmit}>
-        <div className="form-control">
-          <label htmlFor="author">
-            Author:
-            <input
-              type="text"
-              name="author"
-              id="author"
-              value={formInputs.author}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
-        <div className="form-control">
-          <label htmlFor="title">
-            Title:
-            <input
-              type="text"
-              name="title"
-              id="title"
-              value={formInputs.title}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
-        <button type="submit">Add Book</button>
+        <input
+          type="text"
+          id="title"
+          value={title}
+          placeholder="Book title"
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
+        />
+        <input
+          type="text"
+          id="author"
+          value={author}
+          placeholder="author"
+          onChange={(e) => {
+            setAuthor(e.target.value);
+          }}
+        />
+        <button type="submit">Add book</button>
       </form>
     </div>
   );
