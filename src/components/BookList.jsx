@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBooks } from '../redux/books/booksSlice';
-import AddBookForm from './AddBookForm';
 import Book from './Book';
 
 const BookList = () => {
@@ -24,7 +23,6 @@ const BookList = () => {
             />
           ))}
       </ul>
-      <AddBookForm />
     </div>
   );
 };

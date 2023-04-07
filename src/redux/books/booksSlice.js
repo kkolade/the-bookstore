@@ -4,13 +4,18 @@ import axios from 'axios';
 const baseURL =
   'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 const API_KEY = 'Gt8ioRdE9t5U5NKHXwfG';
-const exerciseURL =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/g7dj58UKgU7fzx0rJuTx/books/';
 
 export const fetchBooks = createAsyncThunk('books/fetchAllBooks/', async () => {
   try {
-    return await axios.get(exerciseURL);
-    // return axios.get(`${baseUrl}/apps/${apiKey}/books/`);
+    return axios.get(`${baseURL}/apps/${API_KEY}/books/`);
+  } catch (error) {
+    return error;
+  }
+});
+
+export const addBook = createAsyncThunk('books/addBook', async (book) => {
+  try {
+    return axios.post(`${baseURL}/apps/${API_KEY}/books`, book);
   } catch (error) {
     return error;
   }
@@ -51,8 +56,18 @@ export const booksSlice = createSlice({
         books,
       };
     });
+
+    builder.addCase(addBook.fulfilled, (state, action) => {
+      const newBook = {
+        id: action.meta.arg.item_id,
+        title: action.meta.arg.title,
+        author: action.meta.arg.author,
+      };
+      state.push(newBook);
+      return state;
+    });
   },
 });
 
-export const { addBook, deleteBook } = booksSlice.actions;
+export const { deleteBook } = booksSlice.actions;
 export default booksSlice.reducer;
