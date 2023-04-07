@@ -1,42 +1,61 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const baseURL =
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
+const API_KEY = 'Gt8ioRdE9t5U5NKHXwfG';
+const exerciseURK =
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/g7dj58UKgU7fzx0rJuTx/books/';
+
+export const fetchBooks = createAsyncThunk('books/fetchAllBooks/', async () => {
+  try {
+    return axios.get(exerciseURK);
+    // return axios.get(`${baseUrl}/apps/${apiKey}/books/`);
+  } catch (error) {
+    return error;
+  }
+});
+
+export const addBook = createAsyncThunk('books/addBook', async (book) => {
+  try {
+    return axios.post(`${baseUrl}/apps/${apiKey}/books`, book);
+  } catch (error) {
+    return error;
+  }
+});
+
+export const deleteBook = createAsyncThunk('books/deleteBook/', async (id) => {
+  try {
+    return axios.delete(`${baseUrl}/apps/${apiKey}/books/${id}`);
+  } catch (error) {
+    return error;
+  }
+});
 
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  books: [],
+  isLoading: false,
+  isSuccessful: false,
+  error: null,
 };
 
 export const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      state.books = [...state.books, action.payload];
-    },
-    deleteBook: (state, action) => {
-      state.books = state.books.filter(
-        (book) => book.item_id !== action.payload,
-      );
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchBooks.fulfilled, (state, action) => {
+      const books = Object.keys(action.payload.data).map((key) => {
+        const book = action.payload.data[key][0];
+
+        return {
+          id: key,
+          ...book,
+        };
+      });
+      return books;
+    });
   },
 });
 
-export const { addBook, deleteBook } = booksSlice.actions;
 export default booksSlice.reducer;
