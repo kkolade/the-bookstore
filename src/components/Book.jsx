@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteBook } from '../redux/books/booksSlice';
 
-const Book = ({ id, title, author }) => {
+const Book = ({ key, id, title, author }) => {
   const dispatch = useDispatch();
 
   const handleRemove = () => {
@@ -11,7 +11,7 @@ const Book = ({ id, title, author }) => {
   };
 
   return (
-    <li>
+    <li key={key}>
       {title}
       {' by '}
       {author}
