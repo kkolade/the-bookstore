@@ -16,22 +16,6 @@ export const fetchBooks = createAsyncThunk('books/fetchAllBooks/', async () => {
   }
 });
 
-export const addBook = createAsyncThunk('books/addBook', async (book) => {
-  try {
-    return axios.post(`${baseUrl}/apps/${apiKey}/books`, book);
-  } catch (error) {
-    return error;
-  }
-});
-
-export const deleteBook = createAsyncThunk('books/deleteBook/', async (id) => {
-  try {
-    return axios.delete(`${baseUrl}/apps/${apiKey}/books/${id}`);
-  } catch (error) {
-    return error;
-  }
-});
-
 const initialState = {
   books: [],
   isLoading: false,
