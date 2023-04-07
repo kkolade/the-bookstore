@@ -14,7 +14,8 @@ export const fetchBooks = createAsyncThunk('books/fetchAllBooks/', async () => {
 
 export const addBook = createAsyncThunk('books/addBook', async (book) => {
   try {
-    return axios.post(`${baseURL}/apps/${API_KEY}/books`, book);
+    axios.post(`${baseURL}/apps/${API_KEY}/books`, book);
+    return book;
   } catch (error) {
     return error;
   }
@@ -22,7 +23,8 @@ export const addBook = createAsyncThunk('books/addBook', async (book) => {
 
 export const deleteBook = createAsyncThunk('books/deleteBook/', async (id) => {
   try {
-    return axios.delete(`${baseURL}/apps/${API_KEY}/books/${id}`);
+    axios.delete(`${baseURL}/apps/${API_KEY}/books/${id}`);
+    return id;
   } catch (error) {
     return error;
   }
@@ -49,27 +51,29 @@ export const booksSlice = createSlice({
           ...book,
         };
       });
-      return {
-        ...state.books,
-        books,
-      };
+      state.isLoading = false;
+      state.books = books;
     });
 
     builder.addCase(addBook.fulfilled, (state, action) => {
       const newBook = {
-        id: action.meta.arg.item_id,
-        title: action.meta.arg.title,
-        author: action.meta.arg.author,
+        id: action.payload.item_id,
+        title: action.payload.title,
+        author: action.payload.author,
       };
+      state.isLoading = false;
       state.books.push(newBook);
       return state;
     });
 
+    builder.addCase(addBook.pending, (state) => {
+      state.isLoading = true;
+    });
+
     builder.addCase(deleteBook.fulfilled, (state, action) => {
-      const newState = state.books.filter(
-        (book) => book.id !== action.meta.arg.item_id,
-      );
-      return newState;
+      const newState = state.books.filter((book) => book.id !== action.payload);
+      state.isLoading = false;
+      state.books = newState;
     });
   },
 });
