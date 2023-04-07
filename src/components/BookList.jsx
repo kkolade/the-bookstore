@@ -13,8 +13,8 @@ const BookList = () => {
   return (
     <div>
       <ul>
-        {books &&
-          books.map((book) => (
+        {books
+          && books.map((book) => (
             <Book
               title={book.title}
               author={book.author}

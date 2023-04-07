@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseURL =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
+const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 const API_KEY = 'Gt8ioRdE9t5U5NKHXwfG';
 
 export const fetchBooks = createAsyncThunk('books/fetchAllBooks/', async () => {
@@ -68,7 +67,7 @@ export const booksSlice = createSlice({
 
     builder.addCase(deleteBook.fulfilled, (state, action) => {
       const newState = state.books.filter(
-        (book) => book.id !== action.meta.arg.item_id
+        (book) => book.id !== action.meta.arg.item_id,
       );
       return newState;
     });

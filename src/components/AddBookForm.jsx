@@ -19,7 +19,6 @@ const AddBookForm = () => {
     dispatch(addBook(book));
     setTitle('');
     setAuthor('');
-    console.log(book);
   };
 
   return (

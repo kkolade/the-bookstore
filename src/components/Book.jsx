@@ -3,7 +3,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteBook } from '../redux/books/booksSlice';
 
-const Book = ({ key, id, title, author }) => {
+const Book = ({
+  key, id, title, author,
+}) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
