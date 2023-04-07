@@ -67,7 +67,9 @@ export const booksSlice = createSlice({
     });
 
     builder.addCase(deleteBook.fulfilled, (state, action) => {
-      const newState = state.filter((book) => book.id !== action.meta.arg);
+      const newState = state.books.filter(
+        (book) => book.id !== action.meta.arg.item_id
+      );
       return newState;
     });
   },

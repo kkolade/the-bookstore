@@ -6,7 +6,7 @@ import { deleteBook } from '../redux/books/booksSlice';
 const Book = ({ key, id, title, author }) => {
   const dispatch = useDispatch();
 
-  const handleRemove = () => {
+  const handleClick = () => {
     dispatch(deleteBook(id));
   };
 
@@ -15,7 +15,7 @@ const Book = ({ key, id, title, author }) => {
       {title}
       {' by '}
       {author}
-      <button type="submit" onClick={handleRemove}>
+      <button type="submit" onClick={handleClick}>
         Remove
       </button>
     </li>
@@ -23,6 +23,7 @@ const Book = ({ key, id, title, author }) => {
 };
 
 Book.propTypes = {
+  key: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
