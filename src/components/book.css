@@ -1,11 +1,15 @@
 .Book-card {
   width: 85%;
   height: 12rem;
-  margin: 2rem auto;
+  margin: 2rem auto 0;
   padding: 2rem 9.188rem 1.625rem 1.688rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #fff;
+}
+
+.Book-card:last-child {
+  margin-bottom: none !important;
 }
 
 .Book-detail {
@@ -70,6 +74,7 @@
   border: none;
   background-color: #fff;
   margin-top: 2rem;
+  cursor: pointer;
 }
 
 .Book-button:not(:first-child) {
