@@ -1,11 +1,14 @@
 .Book-card {
-  width: 85%;
+  width: 100%;
   height: 12rem;
   margin: 2rem auto 0;
   padding: 2rem 9.188rem 1.625rem 1.688rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Book-card:last-child {
@@ -80,3 +83,69 @@
 .Book-button:not(:first-child) {
   border-left: 1px solid #e8e8e8;
 }
+
+.Book-completed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Book-progress {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    border: 5px solid #307bbe;
+    border-left-color: #e8e8e8;
+    transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.Book-content {
+  margin-left: 0.75rem;
+}
+
+.Book-figure {
+  font-family: "Montserrat",sans-serif;
+  font-size: 2.3rem;
+    color: #121212;
+}
+
+.Book-text {
+  font-size: 0.9rem;
+  font-family: "Montserrat";
+font-weight: light;
+}
+
+.Book-current {
+  text-transform: uppercase;
+  font-family: "Roboto Slab",serif;
+    font-weight: 300;
+    color: #121212;
+    font-size: .813rem;
+    opacity: .5;
+}
+
+.Book-chapter {
+  margin-top: 0.438rem;
+    font-size: 1rem;
+    letter-spacing: -.4px;
+    font-family: "Roboto Slab",serif;
+    font-weight: 300;
+    color: #121212;
+    margin-bottom: 1.6rem;
+}
+
+.Book-position-button {
+  cursor: pointer;
+  border: none;
+  background-color: #0290ff;
+  border-radius: 3px;
+  padding: 8px 24px;
+  font-family: "Roboto Slab",serif;
+  font-weight: 300;
+  letter-spacing: .5px;
+  color: #fff;
+}
+
+
+

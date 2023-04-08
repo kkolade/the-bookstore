@@ -1,3 +1,4 @@
+import { FaUserAlt } from 'react-icons/fa';
 import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Categories from './components/Categories';
@@ -18,6 +19,7 @@ function App() {
             <Link to="/categories">Categories</Link>
           </li>
         </ul>
+        <FaUserAlt className="App-user" />
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />

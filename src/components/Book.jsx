@@ -31,6 +31,20 @@ const Book = ({
           </button>
         </div>
       </div>
+      <div className="Book-completed">
+        <div className="Book-progress" />
+        <div className="Book-content">
+          <p className="Book-figure">78%</p>
+          <p className="Book-text">Completed</p>
+        </div>
+      </div>
+      <div className="Book-position">
+        <p className="Book-current">Current Chapter</p>
+        <p className="Book-chapter">Chapter: 1 - The Age of Learning</p>
+        <button type="submit" className="Book-position-button">
+          Update Progress
+        </button>
+      </div>
     </li>
   );
 };
