@@ -10,7 +10,7 @@
 .addBookForm-title {
   height: 1.5rem;
   margin: 1.813rem 32.75rem 1.188rem 0;
-  font-family: Montserrat;
+  font-family: Montserrat, serif;
   font-size: 1.25rem;
   font-weight: bold;
   font-stretch: normal;
@@ -35,7 +35,7 @@
   background-color: #fff;
 }
 
-.addBookForm-categories {
+.addBookForm-author {
   width: 17.813rem;
   height: 2.813rem;
   margin: 1.188rem 1.125rem 0;
@@ -52,7 +52,7 @@
   padding: 0.801rem 1.188rem 0.886rem 1.375rem;
   border-radius: 3px;
   font-weight: 700;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   text-transform: uppercase;
   background-color: #0290ff;
   color: #fff;

@@ -37,7 +37,7 @@ const AddBookForm = () => {
           }}
         />
         <input
-          className="addBookForm-categories"
+          className="addBookForm-author"
           type="text"
           id="author"
           value={author}
