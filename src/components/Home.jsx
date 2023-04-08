@@ -5,7 +5,6 @@ import BookList from './BookList';
 
 const Home = () => (
   <div>
-    <h2>Book List</h2>
     <BookList />
     <AddBookForm />
   </div>
