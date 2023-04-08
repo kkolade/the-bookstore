@@ -91,13 +91,12 @@
 }
 
 .Book-progress {
-    border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
-    border: 5px solid #307bbe;
-    border-left-color: #e8e8e8;
-    transform: rotate(45deg);
-    transform: rotate(45deg);
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  border: 5px solid #307bbe;
+  border-left-color: #e8e8e8;
+  transform: rotate(45deg);
 }
 
 .Book-content {
@@ -105,34 +104,34 @@
 }
 
 .Book-figure {
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.3rem;
-    color: #121212;
+  color: #121212;
 }
 
 .Book-text {
   font-size: 0.9rem;
-  font-family: "Montserrat";
-font-weight: light;
+  font-family: "Montserrat", serif;
+  font-weight: 300;
 }
 
 .Book-current {
   text-transform: uppercase;
-  font-family: "Roboto Slab",serif;
-    font-weight: 300;
-    color: #121212;
-    font-size: .813rem;
-    opacity: .5;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  color: #121212;
+  font-size: 0.813rem;
+  opacity: 0.5;
 }
 
 .Book-chapter {
   margin-top: 0.438rem;
-    font-size: 1rem;
-    letter-spacing: -.4px;
-    font-family: "Roboto Slab",serif;
-    font-weight: 300;
-    color: #121212;
-    margin-bottom: 1.6rem;
+  font-size: 1rem;
+  letter-spacing: -0.4px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  color: #121212;
+  margin-bottom: 1.6rem;
 }
 
 .Book-position-button {
@@ -141,11 +140,8 @@ font-weight: light;
   background-color: #0290ff;
   border-radius: 3px;
   padding: 8px 24px;
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 300;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   color: #fff;
 }
-
-
-
