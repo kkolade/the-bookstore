@@ -6,23 +6,23 @@ import Home from './components/Home';
 function App() {
   return (
     <div className="App-container">
-      <div className="App">
-        <nav>
-          <Link to="/">The Great Bookstore</Link>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/categories">Categories</Link>
-            </li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/categories" element={<Categories />} />
-        </Routes>
-      </div>
+      <nav className="App-navbar">
+        <Link to="/" className="App-headline">
+          The Great Bookstore
+        </Link>
+        <ul className="App-links">
+          <li className="App-link-item">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="App-link-item">
+            <Link to="/categories">Categories</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/categories" element={<Categories />} />
+      </Routes>
     </div>
   );
 }

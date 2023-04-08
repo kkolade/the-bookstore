@@ -13,7 +13,7 @@ const Book = ({
   };
 
   return (
-    <li key={key}>
+    <li key={key} className="Book-card">
       {title}
       {' by '}
       {author}
