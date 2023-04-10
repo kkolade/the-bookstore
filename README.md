@@ -55,7 +55,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- A live demo link will be added as soon as the app is completed and hosted
+- [Live demo](https://mindhub-bookstore.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
