@@ -9,7 +9,7 @@ function App() {
     <div className="App-container">
       <nav className="App-navbar">
         <Link to="/" className="App-headline">
-          The Great Bookstore
+          Mindhub Bookstore
         </Link>
         <ul className="App-links">
           <li className="App-link-item">
